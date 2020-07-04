@@ -1,0 +1,22 @@
+- Configuração do Banco de Dados
+
+	aquivo .env tem as configurações do banco de dados como user, senha, etc..
+
+	o config/database.php é usado para configurar ser o BD vai ser com postgres, mysql, etc..
+
+	o app/Providers/AppServiceProvider.php utilizei para padronizar as colunas
+
+
+- Criar model e migrations
+
+	obs: migrations serve para facilitar a criação das tabelas
+
+	criar model e migration: $ php artisan make:model Models\\ModelBook -m
+
+	subir para o BD o model e migration: $ php artisan migrate
+
+
+
+
+
+
