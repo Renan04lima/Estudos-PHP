@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+?>
+
 @extends('templates.template')
 
 @section('content')
@@ -11,6 +16,7 @@
     </div>
 
     <div class="col-8 m-auto">
+        @csrf
         <table class="table text-center">
             <thead class="thead-dark">
             <tr>
@@ -40,15 +46,15 @@
                             <button class="btn btn-primary">Editar</button>
                         </a>
 
-                        <a href="">
+                        <a href="{{url("books/$books->id")}}" class="js-del"> {{--"js-del" chama aquela janelinha para confirmar a exclusão dos dados--}}
                             <button class="btn btn-danger">Deletar</button>
                         </a>
                     </td>
                 </tr>
             @endforeach
-
-
             </tbody>
         </table>
+
+        {{$book->links()}} {{--cria os links da paginação--}}
     </div>
 @endsection
